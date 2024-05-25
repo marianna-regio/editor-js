@@ -5,6 +5,7 @@ import List from "@editorjs/list";
 import Checklist from "@editorjs/checklist";
 import RawTool from "@editorjs/raw";
 import Delimiter from "@editorjs/delimiter";
+import edjsHTML from "editorjs-html";
 
 import "./Editor.css";
 
@@ -25,6 +26,11 @@ const DEFAULT_INITIAL_DATA: any = {
   ],
   version: "2.29.1",
 };
+
+const parser = edjsHTML()
+
+const html = parser.parse(DEFAULT_INITIAL_DATA)
+console.log('html', html)
 
 const EditorComponent: React.FC = () => {
   const ejInstance = useRef<EditorJS | null>();
@@ -70,7 +76,6 @@ const EditorComponent: React.FC = () => {
 };
 
 export default EditorComponent;
-
 
 /*
 - Implementação básica de alguns blocos
