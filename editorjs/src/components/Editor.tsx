@@ -34,6 +34,7 @@ console.log('html', html)
 
 const EditorComponent: React.FC = () => {
   const ejInstance = useRef<EditorJS | null>();
+  console.log(ejInstance)
   const initEditor = () => {
     const editor = new EditorJS({
       holder: "editorjs",
